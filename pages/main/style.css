@@ -85,7 +85,7 @@ header {
     width: 100%;
 }
 .header-nav-link-active {
-    color: #292929;    
+    color: #fafafa;   
 }
 .header-nav-link-active::after {
     display: block;
