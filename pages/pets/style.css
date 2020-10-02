@@ -1,0 +1,305 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+.header-wrapper {
+    background: #ffffff;
+    position: sticky;
+    top: 0;
+}
+.header-block {
+    padding-top: 30px;
+    height: 120px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+header {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100%;
+    text-decoration: none;
+}
+.header-logo-title {
+    margin: 0;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+.header-logo-subtitle {
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    color: #292929;
+}
+.header-nav {
+    margin-bottom: 3px;
+    min-width: 37%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-nav-link {
+    position: relative;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 160%;
+    color: #545454;
+    text-decoration: none;
+}
+.header-nav-link:hover {
+    color: #292929;
+}
+.header-nav-link::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #f1cdb3;
+    content: "";
+    transition: width 0s ease-out;
+}
+.header-nav-link:hover:after {
+    width: 100%;
+}
+.header-nav-link-active {
+    color: #292929;    
+}
+.header-nav-link-active::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #f1cdb3;
+    content: "";
+}
+.our-friends-wrapper {
+    background: #f6f6f6;
+}
+.our-friends {
+    max-width: 1280px;
+    height: 1342px;
+    margin: 0 auto;
+    padding-top: 80px;
+}
+.our-friends-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.text-title-center {
+    margin: 0;
+    max-width: 400px;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+.main-btn {
+    width: 207px;
+    height: 52px;
+    background: #f1cdb3;
+    border-radius: 100px;
+    border: none;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    margin-top: 41px;
+    cursor: pointer;
+}
+.main-btn:focus {
+    outline: none;
+}
+.main-btn:hover {
+    background: #fddcc4;
+}
+.main-btn:active {
+    background: #fddcc4;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.pet-cards-wrapper {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 1200px;
+    height: 930px;
+}
+.animal-single-card {
+    width: 270px;
+    height: 435px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fafafa;
+    border-radius: 9px;
+    padding: 0px 35px;
+}
+.animal-single-card:hover {
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    cursor: pointer;
+}
+.animal-single-card button {
+    width: 187px;
+    height: 52px;
+    margin-top: 30px;
+    border: 2px solid #f1cdb3;
+    background: inherit;
+}
+.pet-name {
+    margin: 0;
+    margin-top: 30px;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+.pet-cards-pagination {
+    margin-top: 29px;
+    display: flex;
+    justify-content: space-between;
+    width: 340px;
+    height: 52px;
+}
+.pag-btn {
+    width: 52px;
+    height: 52px;
+    border: 2px solid #f1cdb3;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: inherit;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 115%;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #292929;
+}
+.pag-btn:focus {
+    outline: none;
+}
+.pag-btn:hover {
+    background: #fddcc4;
+}
+.pag-active-page {
+    background: #f1cdb3;
+}
+.pag-active-page:hover {
+    background: #f1cdb3;
+}
+.disabled {
+    border: 2px solid #cdcdcd;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 115%;
+    text-align: center;
+    color: #cdcdcd;
+}
+.disabled:hover {
+    background: inherit;
+    cursor: initial;
+}
+.footer-wrapper {
+    background: url(../../assets/images/footer-gradient-background.png) center center/cover no-repeat,
+        radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
+}
+footer {
+    height: 350px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 35px;
+}
+.footer-container {
+    margin: 0 auto;
+    max-width: 1200px;
+    height: 315px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-title {
+    margin: 0;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+}
+.footer-row {
+    text-decoration: none;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+}
+.footer-row-desc {
+    margin: 0;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #f1cdb3;
+    margin-left: 20px;
+}
+.for-questions-block {
+    margin-top: 23px;
+}
+.we-are-waiting-block {
+    margin-top: 23px;
+}
+.we-are-waiting-title {
+    margin-left: -5px;
+}
+.we-are-waiting-row {
+    margin-left: -5px;
+    margin-top: 32px;
+}
+.for-questions-row {
+    margin-top: 44px;
+}
