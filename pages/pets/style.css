@@ -148,10 +148,6 @@ header {
 }
 .main-btn:active {
     background: #fddcc4;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-}
-.our-friends-container button:active {
-    background: #fddcc4;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
 }
 .pet-cards-wrapper {
@@ -227,8 +223,16 @@ header {
 .pag-btn:hover {
     background: #fddcc4;
 }
+.pag-btn:active {
+    background: #fddcc4;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
 .pag-active-page {
     background: #f1cdb3;
+}
+.pag-active-page:active {
+    background: #f1cdb3;
+    box-shadow: none;
 }
 .pag-active-page:hover {
     background: #f1cdb3;
@@ -246,6 +250,10 @@ header {
 .disabled:hover {
     background: inherit;
     cursor: initial;
+}
+.disabled:active {
+    background: inherit;
+    box-shadow: none;
 }
 .footer-wrapper {
     background: url(../../assets/images/footer-gradient-background.png) center center/cover no-repeat,
