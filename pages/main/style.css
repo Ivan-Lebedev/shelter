@@ -309,26 +309,30 @@ header {
     flex-direction: column;
     align-items: center;
 }
+/* ************************************** */
 .icons-container {
-    max-width: 1026px;
+    max-width: 1030px;
     height: 281px;
+    margin-top: 5px;
     display: flex;
-    flex-direction: column;
-    margin-top: 60px;
-    align-items: center;
-}
-.icons-container-row {
-    width: 1143px;
-    display: flex;
-    justify-content: space-around;
-    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .icon-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 113px;
+    margin-left: 120px;
+    margin-top: 55px;
 }
+.icon-item:nth-child(1) {
+    margin-left: 0;
+}
+.icon-item:nth-child(6) {
+    margin-left: 0;
+}
+/* ************************************** */
 .icon-header {
     margin: 0;
     font-family: Georgia;
@@ -426,6 +430,7 @@ header {
 .footer-wrapper {
     background: url(../../assets/images/footer-gradient-background.png) center center/cover no-repeat,
         radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
+    overflow: hidden;
 }
 footer {
     height: 350px;
@@ -484,7 +489,7 @@ footer {
     margin-top: 44px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1280px) {
     .header-block {
         padding-top: 30px;
         padding-left: 30px;
@@ -493,7 +498,7 @@ footer {
         max-width: 768px;
     }
     .header-nav {
-        min-width: 62%;
+        min-width: 444px;
         margin-bottom: 6px;
     }
     .header-content {
@@ -553,24 +558,143 @@ footer {
     .help-section {
         max-width: 768px;
         height: 779px;
+        padding-top: 80px;
     }
     .help-section-container {
-        margin-top: 80px;
         padding-top: 0px;
         max-width: 630px;
         height: 599px;
     }
     .icons-container {
-        max-width: 630px;
+        width: 630px;
         height: 449px;
         display: flex;
-        flex-direction: column;
-        margin-top: 60px;
+        flex-direction: row;
+        margin-top: 34px;
         align-items: center;
     }
-    .icons-container-row {
-        width: 630px;
+    /* ************************** */
+    .icon-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 170px;
+        height: 113px;
+        margin: 25px;
+    }
+    .icon-item:nth-child(1) {
+        margin-left: 0;
+    }
+    .icon-item:nth-child(3) {
+        margin-right: 0;
+    }
+    .icon-item:nth-child(4) {
+        margin-left: 0;
+    }
+    .icon-item:nth-child(6) {
+        margin-right: 0;
+        margin-left: 25px;
+    }
+    .icon-item:nth-child(7) {
+        margin-left: 0;
+    }
+    .icon-item:nth-child(9) {
+        margin-right: 0;
+    }
+    .icon-item-1 img {
+        margin-right: 18px;
+    }
+    .icon-item-1 h3 {
+        margin-right: 20px;
+    }
+    .icon-item-2 img {
+        margin-right: 22px;
+    }
+    .icon-item-3 img {
+        margin-left: 15px;
+    }
+    .icon-item-3 h3 {
+        margin-left: 20px;
+    }
+    .icon-item-4 img {
+        margin-right: 20px;
+        margin-top: 4px;
+    }
+    .icon-item-4 h3 {
+        margin-right: 16px;
+    }
+    .icon-item-5 img {
+        margin-right: 4px;
+        margin-top: 4px;
+    }
+    .icon-item-6 img {
+        margin-top: 4px;
+        margin-left: 17px;
+    }
+    .icon-item-6 h3 {
+        margin-left: 19px;
+    }
+    .icon-item-7 img {
+        margin-top: 10px;
+        margin-right: 20px;
+    }
+    .icon-item-7 h3 {
+        margin-right: 20px;
+    }
+    .icon-item-8 img {
+        margin-top: 10px;
+    }
+    .icon-item-9 img {
+        margin-top: 11px;
+        margin-left: 16px;
+    }
+    .icon-item-9 h3 {
+        margin-left: 22px;
+        margin-top: 29px;
+    }
+    /* ***************** */
+    .donation-section {
+        max-width: 768px;
+        height: 783px;
+        padding-top: 92px;
+    }
+    .donation-section-container {
+        max-width: 550px;
+        max-height: 783px;
+        flex-direction: column;
+    }
+    .donation-section-img-part {
+        order: 1;
+        margin-left: 21px;
+        margin-top: 61px;
+    }
+    .donation-section-text-part {
+        margin-top: -12px;
+        margin-left: 84px;
+    }
+    footer {
+        height: 639px;
+        max-width: 768px;
+        padding-top: 35px;
+    }
+    .footer-container {
+        max-width: 708px;
+        height: 315px;
         flex-wrap: wrap;
     }
-
+    .for-questions-block {
+        margin-top: -5px;
+        margin-left: 33px;
+    }
+    .we-are-waiting-block {
+        margin-top: -4px;
+        margin-right: 43px;
+    }
+    .img-block {
+        margin: 0 auto;
+        margin-top: 64px;
+    }
+    .footer-mail-to {
+        margin-top: 43px;
+    }
 }
