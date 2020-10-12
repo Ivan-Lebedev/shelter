@@ -316,6 +316,9 @@ footer {
 .for-questions-row {
     margin-top: 44px;
 }
+.under768 {
+    display: none;
+}
 /* Responsive */
 @media screen and (max-width: 1279px) {
     .header-block {
@@ -375,5 +378,123 @@ footer {
     }
     .footer-mail-to {
         margin-top: 43px;
+    }
+}
+/* ************************* */
+@media screen and (max-width: 767px) {
+    .over768 {
+        display: none;
+    }
+    .under768 {
+        display: block;
+    }
+    .burger-button {
+        width: 30px;
+        height: 22px;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+    .header-block {
+        padding-top: 30px;
+        padding-left: 10px;
+        padding-right: 50px;
+        max-width: 320px;
+    }
+    .header-logo-subtitle {
+        margin-left: 1px;
+    }
+    .header-logo {
+        align-items: flex-start;
+    }
+    .our-friends {
+        max-width: 320px;
+        height: 1649px;
+        padding-top: 42px;
+    }
+    .our-friends-container {
+        width: 300px;
+    }
+    .text-title-center {
+        font-size: 25px;
+        width: 300px;
+    }
+    .resp-320-hidden {
+        display: none;
+    }
+    .pet-cards-wrapper {
+        width: 270px;
+        height: 1393px;
+        margin-top: 42px;
+    }
+    .pet-cards-pagination {
+        width: 300px;
+        margin-top: 13px;
+    }
+    footer {
+        height: 809px;
+        max-width: 320px;
+    }
+    .footer-container {
+        max-width: 320px;
+        height: 809px;
+    }
+    .img-block img {
+        height: 269px;
+    }
+    .footer-title {
+        font-size: 25px;
+        line-height: 130%;
+        text-align: center;
+        width: 278px;
+        height: 64px;
+        margin-left: 9px;
+    }
+    .footer-title br {
+        display: none;
+    }
+    .footer-mail-to {
+        margin-top: 43px;
+        margin-left: 22px;
+    }
+    .for-questions-row {
+        margin-top: 44px;
+        margin-left: 28px;
+    }
+    .we-are-waiting-title {
+        margin-left: 22px;
+        margin-top: 39px;
+    }
+    .we-are-waiting-row {
+        margin-left: 10px;
+        margin-top: 32px;
+    }
+    .footer-row-desc-1 {
+        margin-top: 9px;
+        width: 258.28px;
+        height: 46px;
+    }
+    .footer-row-desc-2 {
+        margin-top: 11px;
+    }
+    .footer-row-icon {
+        margin-top: 7px;
+    }
+    .img-block {
+        margin-top: 8px;
+        margin-left: 30px;
+    }
+    .we-are-waiting-block {
+        margin-top: -32px;
+        margin-right: 43px;
+    }
+    .for-questions-block {
+        margin-top: -5px;
+        margin-left: 13px;
     }
 }
