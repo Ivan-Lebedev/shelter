@@ -58,6 +58,7 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+
 .header-nav-link {
     position: relative;
     font-family: Arial;
@@ -488,8 +489,11 @@ footer {
 .for-questions-row {
     margin-top: 44px;
 }
+.under768 {
+    display: none;
+}
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1279px) {
     .header-block {
         padding-top: 30px;
         padding-left: 30px;
@@ -696,5 +700,381 @@ footer {
     }
     .footer-mail-to {
         margin-top: 43px;
+    }
+}
+/* **************************************** */
+@media screen and (max-width: 767px) {
+    .over768 {
+        display: none;
+    }
+    .under768 {
+        display: block;
+    }
+    .burger-button {
+        width: 30px;
+        height: 22px;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+
+    /* ******************************** */
+    .header-block {
+        height: 823px;
+        max-width: 320px;
+        padding: 0;
+        padding-top: 31px;
+    }
+    header {
+        margin: 0 49px 0 11px;
+    }
+
+    .header-text-title {
+        font-size: 25px;
+        letter-spacing: 0.06em;
+        text-align: center;
+        width: 200px;
+        /* margin-left: 63px; */
+    }
+
+    .text-desc {
+        text-align: center;
+        height: 96px;
+        width: 300px;
+    }
+    .content-text-part {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .header-content {
+        margin-top: 46px;
+    }
+    .header-btn {
+        margin-left: 0;
+    }
+    .content-img-part img {
+        margin-top: 93px;
+        margin-left: 52px;
+        max-height: 271.77px;
+    }
+    .about {
+        width: 320px;
+    }
+    .text-title {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 25px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: 0.06em;
+        max-width: 300px;
+        margin: 0;
+    }
+    .about-text-title {
+        width: 225px;
+        margin-left: 39px;
+    }
+    .about-container {
+        max-width: 300px;
+        min-height: 974px;
+        padding-top: 60px;
+    }
+    .about-content-img-part img {
+        height: 353.6px;
+    }
+    .about-content-text-part {
+        margin: 0 auto; 
+        width: 300px; 
+    }
+    .about-text-desc {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 160%;
+        text-align: justify;
+    }
+    .about-content-text-part {
+        margin-top: -18px;
+        margin-left: 0px;
+        max-width: 270px;
+    }
+    .p1 {
+        width: 270px;
+        height: 144px;
+        margin-left: 16px;
+    }
+    .p2 {
+        width: 270px;
+        height: 239px;
+        margin-left: 15px;
+        margin-top: 22px;
+    }
+    .about-content-img-part {
+        margin-top: 42px;
+    }
+    .our-friends {
+        max-width: 320px;
+        height: 791px;
+        padding-top: 42px;
+        margin: 0 auto;
+    }
+
+    .our-friends-container {
+        max-width: 300px;
+        height: 707px;
+        position: relative;
+    }
+    .responsive-320-hidden {
+        display: none;
+    }
+    .text-title-center {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 25px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: 0.06em;
+        width: 300px;
+        margin-left: 4px;
+    }
+    .animal-cards {
+        width: 270px;
+        margin: 43px 0;
+    }
+    .slider-wrapper {
+        position: relative;
+    }
+    .slider-btn {
+        position: absolute;
+    }
+    .slider-btn:nth-child(1) {
+        top: 427px;
+        left: 43px;
+    }
+    .slider-btn:nth-child(3) {
+        top: 427px;
+        left: 175px;
+    }
+    .our-friends-container button {
+        margin-top: 70px;
+    }
+    .slider-btn-resp-320 {
+        margin-top: 29px !important;
+    }
+    .help-section {
+        max-width: 320px;
+        height: 745px;
+        padding-top: 42px;
+    }
+    .help-section-container {
+        width: 290px;
+    }
+    .icons-container {
+        width: 290px;
+        height: 555px;
+    }
+    .icon-item img {
+        height: 50px;
+    }
+    .icon-header {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 110%;
+        text-align: center;
+        letter-spacing: 0.06em;
+    }
+    .icon-item {
+        width: 130px;
+        height: 87px;
+        margin: 0px;
+    }
+    /* ************* */
+    .icon-item-1 img {
+        margin-right: 29px;
+    }
+    .icon-item-1 h3 {
+        margin-right: 28px;
+        margin-top: 22px;
+    }
+    .icon-item-2 img {
+        margin-right: -31px;
+    }
+    .icon-item-2 h3 {
+        margin-right: -33px;
+        margin-top: 22px;
+    }
+    .icon-item-3 img {
+        margin-left: -30px;
+        margin-top: 18px;
+    }
+    .icon-item-3 h3 {
+        margin-left: -27px;
+        margin-top: 21px;
+    }
+    .icon-item-4 img {
+        margin-right: -30px;
+        margin-top: 17px;
+    }
+    .icon-item-4 h3 {
+        margin-right: -32px;
+        margin-top: 22px;
+    }
+    .icon-item-5 img {
+        margin-right: 4px;
+        margin-top: 34px;
+    }
+    .icon-item-5 h3 {
+        margin-right: 3px;
+        margin-top: 22px;
+    }
+    .icon-item-6 img {
+        margin-top: 35px;
+        margin-left: 5px;
+    }
+    .icon-item-6 h3 {
+        margin-left: 6px;
+        margin-top: 21px;
+    }
+    .icon-item-7 img {
+        margin-top: 52px;
+        margin-right: 29px;
+    }
+    .icon-item-7 h3 {
+        margin-right: 27px;
+        margin-top: 21px;
+    }
+    .icon-item-8 img {
+        margin-top: 52px;
+        margin-left: 31px;
+    }
+    .icon-item-8 h3 {
+        margin-right: -31px;
+        margin-top: 21px;
+    }
+    .icon-item-9 img {
+        margin-top: 69px;
+        margin-left: -160px;
+    }
+    .icon-item-9 h3 {
+        margin-left: -158px;
+        margin-top: 21px;
+    }
+    /* *********************** */
+    .donation-section {
+        width: 320px;
+        height: 542.2px;
+        padding-top: 55px;
+    }
+    .donation-section-container {
+        width: 300px;
+    }
+    .donation-section-img-part {
+        margin-left: 19px;
+        margin-top: 41px;
+    }
+    .donation-section-img-part img {
+        height: 135.2px;
+    }
+    .donation-section-text-part {
+        margin-top: -12px;
+        margin-left: 31px;
+    }
+    .donation-section-card-number {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 110%;
+        letter-spacing: 0.06em;
+    }
+    .donation-section-card {
+        width: 281px;
+        height: 43px;
+        margin-left: -22px;
+    }
+    .donation-section-text-part .text-title {
+        margin-left: -28px;
+    }
+    .donation-section-subtitle {
+        font-family: Arial;
+        line-height: 160%;
+        margin-left: -18px;
+        letter-spacing: 0px;
+        width: 274px;
+    }
+    .legal-information {
+        width: 280px;
+        height: 90px;
+        text-align: justify;
+        margin-left: -21px;
+    }
+    footer {
+        height: 809px;
+        max-width: 320px;
+    }
+    .footer-container {
+        max-width: 320px;
+        height: 809px;
+    }
+    .img-block img {
+        height: 269px;
+    }
+    .footer-title {
+        font-size: 25px;
+        line-height: 130%;
+        text-align: center;
+        width: 278px;
+        height: 64px;
+        margin-left: 9px;
+    }
+    .footer-title br {
+        display: none;
+    }
+    .footer-mail-to {
+        margin-top: 43px;
+        margin-left: 22px;
+    }
+    .for-questions-row {
+        margin-top: 44px;
+        margin-left: 28px;
+    }
+    .we-are-waiting-title {
+        margin-left: 22px;
+        margin-top: 39px;
+    }
+    .we-are-waiting-row {
+        margin-left: 10px;
+        margin-top: 32px;
+    }
+    .footer-row-desc-1 {
+        margin-top: 9px;
+        width: 258.28px;
+        height: 46px;
+    }
+    .footer-row-desc-2 {
+        margin-top: 11px;
+    }
+    .footer-row-icon {
+        margin-top: 7px;
+    }
+    .img-block {
+        margin-top: 8px;
+        margin-left: 30px;
+    }
+    .we-are-waiting-block {
+        margin-top: -32px;
+        margin-right: 43px;
+    }
+    .for-questions-block {
+        margin-top: -5px;
+        margin-left: 13px;
     }
 }
