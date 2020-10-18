@@ -191,7 +191,7 @@ function showSlides(n) {
         slides[slideIndex].style.display = 'flex'
         slides[slideIndex + 1].style.display = 'flex'
 
-    } else if (width > 319) {
+    } else if (width > 0) {
 
         if (n > slides.length - 1) {
             slideIndex = 0
