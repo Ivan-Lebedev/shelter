@@ -782,6 +782,7 @@ footer {
     body.lock {
         overflow: hidden;
         background: rgba(41, 41, 41, 0.6);
+        transition: all .3s ease 0s;
     }
 
     /* ******************************** */
