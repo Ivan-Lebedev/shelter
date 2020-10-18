@@ -14,6 +14,7 @@ document.addEventListener('click', e => {
     const burgerBtn = target === header__burger || header__burger.contains(target)
     const menuIsActive = header_menu.classList.contains('active')
     if (!menu && !burgerBtn && menuIsActive) {
-        toggleMenu() 
+        toggleMenu()
     }
 })
+
