@@ -10,6 +10,7 @@ body {
     background: #ffffff;
     position: sticky;
     top: 0;
+    z-index: 2;
 }
 .header-block {
     padding-top: 30px;
@@ -459,8 +460,17 @@ footer {
     }
     body.lock {
         overflow: hidden;
+        position: relative;
+    }
+    body.lock::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
         background: rgba(41, 41, 41, 0.6);
-        transition: all .3s ease 0s;
     }
     /* ******************** */
     .header-block {
@@ -558,5 +568,5 @@ footer {
     .for-questions-block {
         margin-top: -5px;
         margin-left: 13px;
-    }
+    }    
 }
