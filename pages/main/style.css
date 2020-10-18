@@ -263,6 +263,7 @@ header {
     justify-content: space-between;
     width: 990px;
     margin: 60px 53px;
+    /* overflow: hidden; */
 }
 .animal-single-card {
     width: 270px;
@@ -273,6 +274,9 @@ header {
     background: #fafafa;
     border-radius: 9px;
     padding: 0px 35px;
+}
+.animal-single-card:last-child {
+    margin-right: 0;
 }
 .animal-single-card:hover {
     box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
@@ -914,7 +918,7 @@ footer {
     .animal-cards {
         width: 270px;
         margin: 43px 0;
-    }
+    }    
     .slider-wrapper {
         position: relative;
     }
@@ -1144,3 +1148,19 @@ footer {
         margin-left: 13px;
     }
 }
+
+/* Slider */
+/* 
+.slick-track {
+    display: flex;
+    justify-content: space-between;
+}
+.slick-list {
+    overflow: hidden;
+}
+.animal-cards {
+    min-width: 0;
+}
+.animal-single-card {
+    min-width: 0;
+} */
