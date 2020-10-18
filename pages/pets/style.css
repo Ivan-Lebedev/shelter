@@ -382,28 +382,89 @@ footer {
 }
 /* ************************* */
 @media screen and (max-width: 767px) {
-    .over768 {
-        display: none;
-    }
     .under768 {
         display: block;
     }
     .burger-button {
+        position: relative;
         width: 30px;
         height: 22px;
-        background: transparent;
         display: flex;
         align-items: center;
         justify-content: center;
-        border: none;
-        outline: none;
         cursor: pointer;
-        margin-right: 5px;
+        margin-right: 54px;
+        z-index: 3;
     }
+    .burger-button:before,
+    .burger-button:after {
+        content: "";
+        background-color: #000;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        transition: all .3s ease 0s;
+    }
+    .burger-button:before {
+        top: 0;
+    }
+    .burger-button:after {
+        bottom: 0;
+    }
+    .burger-button span {
+        position: absolute;
+        background-color: #000;
+        width: 100%;
+        height: 2px;
+        transition: all .3s ease 0s;
+    }
+    .header-logo {
+        z-index: 3;
+        margin-left: 11px;
+    }
+    .header-nav {
+        min-width: 0;
+        position: fixed;
+        top: -100%;
+        /* left: -100%; */
+        width: 320px;
+        height: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 158px;
+        text-align: center;
+        z-index: 2;
+        transition: all .3s ease 0s;
+    }
+    .header-nav.active {
+        top: 0; 
+    }
+    .header-nav-link {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    .burger-button.active:before,
+    .burger-button.active:after,
+    .burger-button.active span {
+        transform: rotate(90deg);
+        top: auto;
+        bottom: auto;
+    }
+    .burger-button.active:before {
+        left: 10px;
+    }
+    .burger-button.active:after {
+        right: 10px;
+    }
+    body.lock {
+        overflow: hidden;
+        background: rgba(41, 41, 41, 0.6);
+    }
+    /* ******************** */
     .header-block {
-        padding-top: 30px;
-        padding-left: 10px;
-        padding-right: 50px;
+        padding-left: 0px;
+        padding-right: 0px;
         max-width: 320px;
     }
     .header-logo-subtitle {
