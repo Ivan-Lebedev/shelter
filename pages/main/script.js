@@ -23,6 +23,17 @@ document.addEventListener('click', e => {
 /* Pet-cards */
 const pets = [
     {
+        "name": "Katrine",
+        "img": "../../assets/images/pets-katrine.png",
+        "type": "Cat",
+        "breed": "British Shorthair",
+        "description": "Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.",
+        "age": "6 months",
+        "inoculations": ["panleukopenia"],
+        "diseases": ["none"],
+        "parasites": ["none"]
+    },
+    {
         "name": "Jennifer",
         "img": "../../assets/images/pets-jennifer.png",
         "type": "Dog",
@@ -30,17 +41,6 @@ const pets = [
         "description": "Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.",
         "age": "2 months",
         "inoculations": ["none"],
-        "diseases": ["none"],
-        "parasites": ["none"]
-    },
-    {
-        "name": "Sophia",
-        "img": "../../assets/images/pets-Sophia.png",
-        "type": "Dog",
-        "breed": "Shih tzu",
-        "description": "Sophia here and I'm looking for my forever home to live out the best years of my life. I am full of energy. Everyday I'm learning new things, like how to walk on a leash, go potty outside, bark and play with toys and I still need some practice.",
-        "age": "1 month",
-        "inoculations": ["parvovirus"],
         "diseases": ["none"],
         "parasites": ["none"]
     },
@@ -56,6 +56,17 @@ const pets = [
         "parasites": ["none"]
     },
     {
+        "name": "Sophia",
+        "img": "../../assets/images/pets-Sophia.png",
+        "type": "Dog",
+        "breed": "Shih tzu",
+        "description": "Sophia here and I'm looking for my forever home to live out the best years of my life. I am full of energy. Everyday I'm learning new things, like how to walk on a leash, go potty outside, bark and play with toys and I still need some practice.",
+        "age": "1 month",
+        "inoculations": ["parvovirus"],
+        "diseases": ["none"],
+        "parasites": ["none"]
+    },   
+    {
         "name": "Scarlett",
         "img": "../../assets/images/pets-scarlet.png",
         "type": "Dog",
@@ -65,18 +76,7 @@ const pets = [
         "inoculations": ["parainfluenza"],
         "diseases": ["none"],
         "parasites": ["none"]
-    },
-    {
-        "name": "Katrine",
-        "img": "../../assets/images/pets-katrine.png",
-        "type": "Cat",
-        "breed": "British Shorthair",
-        "description": "Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.",
-        "age": "6 months",
-        "inoculations": ["panleukopenia"],
-        "diseases": ["none"],
-        "parasites": ["none"]
-    },
+    },    
     {
         "name": "Timmy",
         "img": "../../assets/images/pets-timmy.png",
@@ -112,26 +112,64 @@ const pets = [
     }
 ]
 class PetCard {
-    constructor(src, alt, petName) {
+    constructor(
+        src, alt, petName, type,
+        breed, description, age,
+        inoculations, diseases, parasites
+    ) {
         this.src = src
         this.alt = alt
         this.petName = petName
-        this.parent = document.querySelector('.animal-cards')
+        this.type = type
+        this.breed = breed
+        this.description = description
+        this.age = age
+        this.inoculations = inoculations
+        this.diseases = diseases
+        this.parasites = parasites
+        this.petCardParent = document.querySelector('.animal-cards')
+        this.petModalParent = document.querySelector('body')
     }
-    render() {
+    renderPetCard() {
         const newPetCard = document.createElement('div')
         newPetCard.classList.add('animal-single-card')
+        newPetCard.classList.add(this.petName)
+        newPetCard.classList.add('call-modal')
 
         newPetCard.innerHTML = `
-        <img src=${this.src} alt=${this.alt}>
+        <img class="call-modal ${this.petName}" src=${this.src} alt=${this.alt}>
         <h3 class="pet-name">
             ${this.petName}
         </h3>
-        <button class="main-btn slider-btn-resp-320">
+        <button class="main-btn slider-btn-resp-320 call-modal ${this.petName}">
             Learn more
         </button>     
         `
-        this.parent.append(newPetCard)
+        this.petCardParent.append(newPetCard)
+
+        /* *******************renderPetModals**************** */
+        const newPetModal = document.createElement('div')
+        newPetModal.classList.add('modal-wrapper')
+        newPetModal.classList.add(this.petName)
+
+        newPetModal.innerHTML = `
+        <div class="modal">
+        <div class="pet-image-modal"><img src=${this.src} alt=${this.alt}></div>
+        <div class="pet-info">
+            <div class="pet-name-modal">${this.petName}</div>
+            <div class="pet-breed-modal">${this.type} - ${this.breed}</div>
+            <div class="pet-desc-modal">${this.description}</div>
+            <ul class="pet-features-list">
+                <li class="pet-features-item"><span>Age: </span>${this.age}</li>
+                <li class="pet-features-item"><span>Inoculations: </span>${this.inoculations}</li>
+                <li class="pet-features-item"><span>Diseases: </span>${this.diseases}</li>
+                <li class="pet-features-item"><span>Parasites: </span>${this.parasites}</li>
+            </ul>
+            <button class="modal-close"><img src="../../assets/icons/modal-close.svg" alt="modal-close"></button>
+        </div> 
+        </div>    
+        `
+        this.petModalParent.append(newPetModal)
     }
 }
 
@@ -139,8 +177,51 @@ pets.forEach(item => {
     new PetCard(
         item.img,
         item.name,
-        item.name
-    ).render()
+        item.name,
+        item.type,
+        item.breed,
+        item.description,
+        item.age,
+        item.inoculations,
+        item.diseases,
+        item.parasites
+    ).renderPetCard()
+
+    const btnForCallModal = document.querySelectorAll('.call-modal')
+    const btnForCloseModal = document.querySelectorAll('.modal-close')
+    const modalPetWindow = document.querySelectorAll('.modal-wrapper')
+    // const modalPetWindowInside = document.querySelectorAll('.modal')
+
+    btnForCallModal.forEach(btn => btn.addEventListener('click', (e) => {
+        const target = e.target
+        modalPetWindow.forEach(petItem => {
+            if (target.classList.contains(item.name) && petItem.classList.contains(item.name)) {
+                petItem.style.display = 'flex'
+                // back.classList.add('lock')
+            }
+        })
+
+    }))
+
+    btnForCloseModal.forEach(item => item.addEventListener('click', (e) => {
+        const target = e.target
+        modalPetWindow.forEach(item => {
+            item.style.display = 'none'
+        })
+        // back.classList.remove('lock')         
+    }))
+
+    // modalPetWindow.forEach(itemArea => itemArea.addEventListener('click', (e) => {
+    //     const target = e.target
+
+    //     modalPetWindow.forEach(petItem => {
+    //         if (!target.classList.contains(item.name) && petItem.classList.contains(item.name)) {
+    //             petItem.style.display = 'none'
+    //         }
+    //     })    
+    //     back.classList.remove('lock')
+    // }))
+
 })
 
 /* Slider */
@@ -205,13 +286,20 @@ function showSlides(n) {
     }
 
 }
+nextSlide.addEventListener('click', nextSlideMaxWidth = () => {
+    // let width = this.window.innerWidth
+    // if (width > 1279) {
+    //     showSlides(slideIndex += 3)
+    // } else if (width > 767) {
+    //     showSlides(slideIndex += 2)
+    // } else {
+    //     showSlides(slideIndex += 1)
+    // }
+    showSlides(slideIndex += 1)
+})
 
 prevSlide.addEventListener('click', prevSlideMaxWidth = () => {
     showSlides(slideIndex -= 1)
-})
-
-nextSlide.addEventListener('click', nextSlideMaxWidth = () => {
-    showSlides(slideIndex += 1)
 })
 
 renderSlider(slideIndex)
