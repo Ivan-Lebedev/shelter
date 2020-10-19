@@ -272,7 +272,8 @@ header {
 .animal-single-card {
     width: 270px;
     height: 435px;
-    display: flex;
+    /* display: flex; */
+    display: none;
     flex-direction: column;
     align-items: center;
     background: #fafafa;
