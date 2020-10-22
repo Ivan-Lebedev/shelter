@@ -21,6 +21,7 @@ document.addEventListener('click', e => {
 })
 
 /* Pet-cards */
+const pagActivePage = document.querySelector('.pag-active-page')
 let pets = []
 fetch('../../pets.json').then(res => res.json()).then(list => {
     pets = list
@@ -88,8 +89,7 @@ fetch('../../pets.json').then(res => res.json()).then(list => {
     /* Slider */
     let slideIndex = 0
     const slides = document.querySelectorAll('.animal-single-card')
-    const prevSlide = document.querySelector('.slider-btn-prev')
-    const nextSlide = document.querySelector('.slider-btn-next')
+
 
     /* Rendering slider on loading and resizing the window */
     function renderSlider(n) {
@@ -109,67 +109,103 @@ fetch('../../pets.json').then(res => res.json()).then(list => {
 
         if (width > 1279) {
 
-            if (n > slides.length - 3) {
-                slideIndex = 0
+            if (n > slides.length - 16) {
+                makeNextBtnsDisabled()
             }
-            if (n < 0) {
-                slideIndex = slides.length - 3
+            if (n < 8) {
+                makePreviousBtnsDisabled()
             }
             slides.forEach(item => item.style.display = 'none')
 
-            slides[slideIndex].style.display = 'flex'
-            slides[slideIndex + 1].style.display = 'flex'
-            slides[slideIndex + 2].style.display = 'flex'
+            for (let i = 0; i <= 7; i++) {
+                slides[slideIndex + i].style.display = 'flex'
+            }
 
         } else if (width > 767) {
 
-            if (n > slides.length - 2) {
-                slideIndex = 0
+            if (n > slides.length - 12) {
+                makeNextBtnsDisabled()
             }
-            if (n < 0) {
-                slideIndex = slides.length - 2
+            if (n < 6) {
+                makePreviousBtnsDisabled()
             }
             slides.forEach(item => item.style.display = 'none')
 
-            slides[slideIndex].style.display = 'flex'
-            slides[slideIndex + 1].style.display = 'flex'
+            for (let i = 0; i <= 5; i++) {
+                slides[slideIndex + i].style.display = 'flex'
+            }
 
         } else if (width > 0) {
 
-            if (n > slides.length - 1) {
-                slideIndex = 0
+            if (n > slides.length - 6) {
+                makeNextBtnsDisabled()
             }
-            if (n < 0) {
-                slideIndex = slides.length - 1
+            if (n < 3) {
+                makePreviousBtnsDisabled()
             }
             slides.forEach(item => item.style.display = 'none')
 
-            slides[slideIndex].style.display = 'flex'
+            for (let i = 0; i <= 2; i++) {
+                slides[slideIndex + i].style.display = 'flex'
+            }
         }
 
     }
-    nextSlide.addEventListener('click', nextSlideMaxWidth = () => {
+    nextSlide.addEventListener('click', nextSlideMaxWidth = () => {        
         let width = this.window.innerWidth
+        makePreviousBtnsActive()
         if (width > 1279) {
-            showSlides(slideIndex += 3)
+            showSlides(slideIndex += 8)
+            pagActivePage.innerHTML = slideIndex / 8 + 1
         } else if (width > 767) {
-            showSlides(slideIndex += 2)
+            showSlides(slideIndex += 6)
+            pagActivePage.innerHTML = slideIndex / 6 + 1
         } else {
-            showSlides(slideIndex += 1)
+            showSlides(slideIndex += 3)
+            pagActivePage.innerHTML = slideIndex / 3 + 1
         }
-        // showSlides(slideIndex += 1)
     })
 
     prevSlide.addEventListener('click', prevSlideMaxWidth = () => {
         let width = this.window.innerWidth
+        makeNextBtnsActive()
         if (width > 1279) {
-            showSlides(slideIndex -= 3)
+            showSlides(slideIndex -= 8)
+            pagActivePage.innerHTML = slideIndex / 8 + 1
         } else if (width > 767) {
-            showSlides(slideIndex -= 2)
+            showSlides(slideIndex -= 6)
+            pagActivePage.innerHTML = slideIndex / 6 + 1
         } else {
-            showSlides(slideIndex -= 1)
+            showSlides(slideIndex -= 3)
+            pagActivePage.innerHTML = slideIndex / 3 + 1
         }
-        // showSlides(slideIndex -= 1)
+    })
+    /* First-page / last-page btns */
+    firstPage.addEventListener('click', nextSlideMaxWidth = () => {
+        slideIndex = 0
+        showSlides()
+        makePreviousBtnsDisabled()
+        pagActivePage.innerHTML = 1
+    })
+
+    lastPage.addEventListener('click', nextSlideMaxWidth = () => {
+        let width = this.window.innerWidth
+        if (width > 1279) {
+            slideIndex = slides.length - 8
+            showSlides()
+            makeNextBtnsDisabled()
+            pagActivePage.innerHTML = slideIndex / 8 + 1
+        } else if (width > 767) {
+            slideIndex = slides.length - 6
+            showSlides()
+            makeNextBtnsDisabled()
+            pagActivePage.innerHTML = slideIndex / 6 + 1
+        } else {
+            slideIndex = slides.length - 3
+            showSlides()
+            makeNextBtnsDisabled()
+            pagActivePage.innerHTML = slideIndex / 3 + 1
+        }
     })
 
     renderSlider(slideIndex)
@@ -193,7 +229,7 @@ class PetCard {
         this.inoculations = inoculations
         this.diseases = diseases
         this.parasites = parasites
-        this.petCardParent = document.querySelector('.animal-cards')
+        this.petCardParent = document.querySelector('.pet-cards-wrapper')
         this.petModalParent = document.querySelector('body')
     }
     renderPetCard() {
@@ -295,6 +331,41 @@ const sort6recursively = (list) => {
     }
 
     return list
+}
+
+/* Btns logic */
+const prevSlide = document.querySelector('.pag-btn-prev')
+const nextSlide = document.querySelector('.pag-btn-next')
+const firstPage = document.querySelector('.pag-btn-first')
+const lastPage = document.querySelector('.pag-btn-last')
+
+function makeBtnDisabled(button) {
+    button.classList.add('disabled')
+    button.disabled = true
+}
+function makeBtnActive(button) {
+    button.classList.remove('disabled')
+    button.disabled = false
+}
+function makeNextBtnsDisabled() {
+    makeBtnDisabled(lastPage)
+    makeBtnDisabled(nextSlide)
+    makeBtnActive(firstPage)
+    makeBtnActive(prevSlide)
+}
+function makePreviousBtnsDisabled() {
+    makeBtnDisabled(firstPage)
+    makeBtnDisabled(prevSlide)
+    makeBtnActive(lastPage)
+    makeBtnActive(nextSlide)
+}
+function makePreviousBtnsActive(){
+    makeBtnActive(prevSlide)
+    makeBtnActive(firstPage)
+}
+function makeNextBtnsActive(){
+    makeBtnActive(nextSlide)
+    makeBtnActive(lastPage)
 }
 
 

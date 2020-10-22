@@ -162,7 +162,8 @@ header {
 .animal-single-card {
     width: 270px;
     height: 435px;
-    display: flex;
+    display: none;
+    /* display: flex; */
     flex-direction: column;
     align-items: center;
     background: #fafafa;
@@ -230,6 +231,7 @@ header {
 }
 .pag-active-page {
     background: #f1cdb3;
+    cursor: auto;
 }
 .pag-active-page:active {
     background: #f1cdb3;
@@ -569,4 +571,184 @@ footer {
         margin-top: -5px;
         margin-left: 13px;
     }    
+}
+
+.modal-wrapper {    
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 41, 41, 0.1);
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    /* hide */
+    /* opacity: 0;
+    visibility: hidden; */
+}
+.modal {    
+    display: flex;
+    width: 900px;
+    /* height: 500px; */
+    height: fit-content;
+    background: #fafafa;
+    border-radius: 9px;
+    /* align-items: center; */
+}
+.pet-info {
+    margin-left: 29px;
+    width: 351px;
+    /* height: 362px; */
+    height: fit-content;
+    padding-top: 50px;
+    padding-right: 20px;
+    position: relative;
+}
+.pet-name-modal {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #000000;
+}
+.pet-image-modal {
+    width: 500px;
+    height: 500px;
+}
+.pet-image-modal img {
+    height: 100%;
+}
+.pet-breed-modal {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #000000;
+    margin-top: 10px;
+}
+.pet-desc-modal {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000000;
+    margin-top: 40px;
+}
+.pet-features-list {
+    list-style: none;
+    margin-top: 40px;
+}
+.pet-features-item {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000000;
+    margin-bottom: 10px;
+}
+.pet-features-item span {
+    font-weight: bold;
+}
+.pet-features-item::before {
+    content: "\2022";
+    color: #f1cdb3;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+.modal-close {
+    width: 52px;
+    height: 52px;
+    border: 2px solid #f1cdb3;
+    border-radius: 50%;
+    cursor: pointer;
+    background: transparent;
+    position: absolute;
+    top: -55px;
+    left: 365px;
+}
+.modal-close:focus {
+    outline: none;
+}
+.modal-close:hover {
+    background: #fddcc4;
+}
+.modal-close:active {
+    background: #fddcc4;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 768 */
+@media screen and (max-width: 1279px) {
+    .modal {
+        width: 630px;
+        /* height: 350px; */
+    }
+    .pet-info {
+        width: 260px;
+        /* height: 303px; */
+        padding-top: 10px;
+        padding-right: 10px;
+        margin-left: 11px;
+    }
+    .pet-name-modal {
+        font-size: 35px;
+    }
+    .pet-image-modal {
+        width: 350px;
+        height: 350px;
+    }
+    .pet-breed-modal {
+        font-size: 20px;
+    }
+    .pet-desc-modal {
+        font-size: 13px;
+        margin-top: 20px;
+    }
+    .pet-features-list {
+        margin-top: 20px;
+    }
+    .pet-features-item {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+    .pet-features-item span {
+        font-weight: bold;
+    }
+    .modal-close {
+        left: 265px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .modal {
+        width: 240px;
+        /* height: 341px; */
+    }
+    .pet-image-modal {
+        display: none;
+    }
+    .pet-info {
+        width: 240px;
+        /* height: 341px; */
+        /* padding: 10px; */
+    }
+    .pet-features-list {
+        margin-top: 24px;
+        padding-left: 1em;
+    }
+    .modal-close {
+        left: 210px;
+    }
 }
