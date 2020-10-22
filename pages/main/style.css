@@ -1256,7 +1256,7 @@ footer {
     background: transparent;
     position: absolute;
     top: -55px;
-    left: 385px;
+    left: 365px;
 }
 .modal-close:focus {
     outline: none;
@@ -1307,7 +1307,7 @@ footer {
         font-weight: bold;
     }
     .modal-close {
-        left: 275px;
+        left: 265px;
     }
 }
 
@@ -1329,6 +1329,6 @@ footer {
         padding-left: 1em;
     }
     .modal-close {
-        left: 220px;
+        left: 210px;
     }
 }
