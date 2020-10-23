@@ -70,7 +70,7 @@ fetch('../../pets.json').then(res => res.json()).then(list => {
             modalPetWindow.forEach(petItem => {
                 if (target.classList.contains(item.name) && petItem.classList.contains(item.name)) {
                     petItem.style.display = 'flex'
-                    // back.classList.add('lock')
+                    back.classList.add('lock')
                 }
             })
 
@@ -81,7 +81,7 @@ fetch('../../pets.json').then(res => res.json()).then(list => {
             modalPetWindow.forEach(item => {
                 item.style.display = 'none'
             })
-            // back.classList.remove('lock')         
+            back.classList.remove('lock')         
         }))
 
     })
